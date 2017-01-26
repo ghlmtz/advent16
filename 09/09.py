@@ -21,3 +21,20 @@ while mk < len(line):
 		out += ch
 		mk += 1
 print len(out.rstrip())
+
+### Part two ###
+def process(s):
+	if '(' not in s:
+		return len(s)
+	sum = 0
+	while '(' in s:
+		s_idx = s.find('(')
+		e_idx = s.find(')')+1
+		sum += s_idx
+		n,xx = re.match('\((\d+)x(\d+)\)',s[s_idx:]).groups()
+		next = s[e_idx:e_idx+int(n)]
+		sum += int(xx)*process(next)
+		s = s[e_idx+int(n):]
+	return sum
+
+print process(line.rstrip())
