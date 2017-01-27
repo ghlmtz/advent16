@@ -14,6 +14,11 @@ while accept:
 	m = hashlib.md5()
 	m.update(input + str(i))
 	hex_str = binascii.hexlify(m.digest())
+	# This for loop is for part two
+	for _ in range(2016):
+		m = hashlib.md5()
+		m.update(hex_str)
+		hex_str = binascii.hexlify(m.digest())
 	for five in check.keys():
 		if check[five][1] < i:
 			del check[five]
