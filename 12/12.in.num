@@ -1,0 +1,23 @@
+1 cpy 1 a
+2 cpy 1 b
+3 cpy 26 d
+4 jnz c 2
+5 jnz 1 5
+6 cpy 7 c
+7 inc d
+8 dec c
+9 jnz c -2
+10 cpy a c
+11 inc a
+12 dec b
+13 jnz b -2
+14 cpy c b
+15 dec d
+16 jnz d -6
+17 cpy 16 c
+18 cpy 17 d
+19 inc a
+20 dec d
+21 jnz d -2
+22 dec c
+23 jnz c -5
